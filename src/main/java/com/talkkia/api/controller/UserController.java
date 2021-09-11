@@ -15,10 +15,12 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/")
+    @GetMapping(value = "/",  produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<User> getAllUser(){
 
-        return userRepository.findAll();
+        Flux<User> user= userRepository.findAll();
+        user.
+        return user;
     }
 
 }
